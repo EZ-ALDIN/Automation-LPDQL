@@ -117,11 +117,19 @@ public class AutomationPackageImpl extends EPackageImpl implements AutomationPac
 
 		isInited = true;
 
+		// Obtain or create and register interdependencies
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AutomationPackage.eNS_URI);
+		AutomationPackageImpl theAutomationPackage_1 = (AutomationPackageImpl) (registeredPackage instanceof AutomationPackageImpl
+				? registeredPackage
+				: AutomationPackage.eINSTANCE);
+
 		// Create package meta-data objects
 		theAutomationPackage.createPackageContents();
+		theAutomationPackage_1.createPackageContents();
 
 		// Initialize created meta-data
 		theAutomationPackage.initializePackageContents();
+		theAutomationPackage_1.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theAutomationPackage.freeze();
@@ -340,6 +348,13 @@ public class AutomationPackageImpl extends EPackageImpl implements AutomationPac
 		setName(eNAME);
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
+
+		// Obtain other dependent packages
+		AutomationPackage theAutomationPackage_1 = (AutomationPackage) EPackage.Registry.INSTANCE
+				.getEPackage(AutomationPackage.eNS_URI);
+
+		// Add subpackages
+		getESubpackages().add(theAutomationPackage_1);
 
 		// Create type parameters
 

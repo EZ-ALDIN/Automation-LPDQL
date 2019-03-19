@@ -28,5 +28,30 @@
     <genClasses image="false" ecoreClass="automation.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute automation.ecore#//NamedElement/name"/>
     </genClasses>
+    <nestedGenPackages prefix="Automation" basePackage="org.lpdql" disposableProviderFactory="true"
+        ecorePackage="automation.ecore#/">
+      <genClasses ecoreClass="automation.ecore#//State"/>
+      <genClasses ecoreClass="automation.ecore#//Input"/>
+      <genClasses ecoreClass="automation.ecore#//Output"/>
+      <genClasses ecoreClass="automation.ecore#//Transition">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference automation.ecore#//Transition/event"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference automation.ecore#//Transition/actions"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference automation.ecore#//Transition/origin"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference automation.ecore#//Transition/disnation"/>
+      </genClasses>
+      <genClasses ecoreClass="automation.ecore#//Automation">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference automation.ecore#//Automation/transitions"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference automation.ecore#//Automation/states"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference automation.ecore#//Automation/inputs"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference automation.ecore#//Automation/outputs"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="automation.ecore#//NamedElement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute automation.ecore#//NamedElement/name"/>
+      </genClasses>
+    </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>
