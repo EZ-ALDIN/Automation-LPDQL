@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.lpdql.automation/src-gen" creationIcons="false"
+    editDirectory="/org.lpdql.automation.edit/src-gen" editorDirectory="/org.lpdql.automation.editor/src-gen"
+    modelPluginID="org.lpdql.automation" modelName="Automation" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>automation.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Automation" basePackage="org.lpdql" disposableProviderFactory="true"
+      ecorePackage="automation.ecore#/">
+    <genClasses ecoreClass="automation.ecore#//State"/>
+    <genClasses ecoreClass="automation.ecore#//Input"/>
+    <genClasses ecoreClass="automation.ecore#//Output"/>
+    <genClasses ecoreClass="automation.ecore#//Transition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference automation.ecore#//Transition/event"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference automation.ecore#//Transition/actions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference automation.ecore#//Transition/origin"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference automation.ecore#//Transition/disnation"/>
+    </genClasses>
+    <genClasses ecoreClass="automation.ecore#//Automation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference automation.ecore#//Automation/transitions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference automation.ecore#//Automation/states"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference automation.ecore#//Automation/inputs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference automation.ecore#//Automation/outputs"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="automation.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute automation.ecore#//NamedElement/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

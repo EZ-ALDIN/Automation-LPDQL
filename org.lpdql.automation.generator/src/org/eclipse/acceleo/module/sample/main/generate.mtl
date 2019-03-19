@@ -1,0 +1,29 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generate.
+ */]
+[module generate('http://www.lpdql.org/automation/1.0')]
+
+
+[**
+ * The documentation of the template generateAutomation.
+ * @param anAutomation
+ */]
+[template public generateAutomation(anAutomation : Automation)]
+[comment @main/]
+[file (anAutomation.name + '.html', false, 'UTF-8')]
+<html>
+<h1>Automate [anAutomation.name/] </h1>
+List des etats :
+<ul>
+	[for(s: State | anAutomation.states)]
+		<li>[s.name/]
+			[for(t: Transition | anAutomation.transitions->select(t: Transition | t.origin = s))]
+				<li type="circle">[t.name/]</li>
+			[/for]
+		</li>
+	[/for]
+</ul>
+</html>
+[/file]
+[/template]

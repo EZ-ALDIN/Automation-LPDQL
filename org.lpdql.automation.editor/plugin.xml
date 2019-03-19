@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated automation -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.lpdql.automation.presentation.AutomationModelWizardID"
+            name="%_UI_AutomationModelWizard_label"
+            class="org.lpdql.automation.presentation.AutomationModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AutomationModelFile.gif">
+         <description>%_UI_AutomationModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated automation -->
+      <editor
+            id="org.lpdql.automation.presentation.AutomationEditorID"
+            name="%_UI_AutomationEditor_label"
+            icon="icons/full/obj16/AutomationModelFile.gif"
+            extensions="automation"
+            class="org.lpdql.automation.presentation.AutomationEditor"
+            contributorClass="org.lpdql.automation.presentation.AutomationActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
